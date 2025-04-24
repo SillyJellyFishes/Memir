@@ -1,0 +1,64 @@
+# M.E.M.I.R. – To-Do List
+A non-prioritized, comprehensive checklist for building M.E.M.I.R. (Optional items are marked as such.)
+
+---
+
+- [ ] CLI interface (Typer/Click/Rich)
+- [ ] Data entry and visualization endpoints (optional)
+- [ ] Add WebSocket/Socket.IO support for real-time events
+- [ ] Linting and formatting (Black, isort, flake8)
+- [ ] Tagging and cross-linking with memory
+- [ ] Docker Compose for local/prod
+- [ ] Design minimal UI overlay (optional)
+- [ ] Create API endpoint for user authentication (optional)
+- [ ] Enable persistent chat/voice window (optional)
+- [ ] Implement modular service loading (memory, agent, etc.)
+- [ ] Developer setup and contribution guide
+- [ ] Code snippet storage and search
+- [ ] CRUD for lore elements
+- [x] Implement CRUD for memory items  <!-- FastAPI endpoints for add/search/get memory with metadata and embedding -->
+- [ ] Weekly/daily summary generation
+- [x] Set up Python environment (venv, requirements.txt/pyproject.toml) <!-- requirements.txt set up -->
+- [ ] Release versioning and changelog
+- [ ] LLM-powered code assistance (generation, explanation)
+- [ ] Define agent/automation schema
+- [x] Unit and integration tests (Pytest) <!-- test_chromadb.py covers endpoint tests -->
+- [x] Write API documentation (OpenAPI/Swagger) <!-- FastAPI auto-generates OpenAPI docs -->
+- [ ] Create API endpoint for agent triggers and reminders
+- [x] Enforce local-first data storage <!-- ChromaDB is local and persistent -->
+- [ ] Scheduling and notification system
+- [ ] Research cross-platform floating assistant frameworks (Electron, Tauri, etc.) (optional)
+- [ ] User guide and onboarding docs
+- [x] Add semantic search (vector queries) <!-- Vector search via ChromaDB -->
+- [ ] Implement background triggers (reminders, reports)
+- [ ] Web GUI (optional, React/Vite or alternative) (optional)
+- [x] Integrate ChromaDB for vector search  <!-- ChromaDB integrated and persistent -->
+- [ ] Create API endpoint for metrics logging (optional)
+- [x] API reference <!-- FastAPI auto-generates OpenAPI reference -->
+- [ ] Opt-in controls for cloud AI
+- [ ] CRUD for tasks, projects, and goals
+- [ ] Set up local database (SQLite or PostgreSQL)
+- [ ] Task and project schema
+- [ ] Audit logging (optional)
+- [x] Design schema for notes, embeddings, and metadata <!-- Metadata schema for memory items -->
+- [ ] Relationship mapping (entities, events)
+- [x] Scaffold FastAPI project and main app <!-- main.py structure -->
+- [ ] Calendar/event integration (Google, local)
+- [ ] Integrate OpenRouter API for LLM calls (with opt-in controls)
+- [ ] Create API endpoint for project/task management
+- [x] Create API endpoint for notes/memory storage <!-- /memory/add, /memory/search, /memory/{id} -->
+- [ ] User data export/delete tools
+- [ ] Configure Docker for development and deployment
+- [ ] Context-aware chat and command routing
+- [ ] GitHub integration (issues, PRs, code context)
+- [ ] Voice interface (optional, Whisper/TTS) (optional)
+- [ ] Optional cloud deployment (self-hosted) (optional)
+- [ ] Schema for tracking health/productivity metrics (optional)
+- [ ] Define core configuration and environment variables
+- [ ] Integrations (fitness trackers, glucose monitors) (optional)
+- [ ] Create API endpoint for lore/worldbuilding
+- [ ] Schema for worlds, characters, timelines, etc.
+- [x] Initialize git repository and project structure <!-- assumed initialized -->
+- [x] End-to-end tests for API and frontends <!-- test_chromadb.py -->
+- [ ] Memory summarization and linking
+
