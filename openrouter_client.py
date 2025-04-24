@@ -13,7 +13,7 @@ class OpenRouterClient:
         if not self.api_key:
             raise ValueError("OpenRouter API key not found. Set OPENROUTER_API_KEY environment variable.")
 
-    def chat(self, messages: List[dict], model: str = "openai/gpt-3.5-turbo", max_tokens: int = 512, temperature: float = 0.7) -> str:
+    def chat(self, messages: List[dict], model: str = "openai/gpt-4.1-nano", max_tokens: int = 512, temperature: float = 0.7) -> str:
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",

@@ -2,3 +2,5 @@ fastapi
 uvicorn
 chromadb
 sentence-transformers
+typer
+rich

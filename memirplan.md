@@ -30,6 +30,7 @@ M.E.M.I.R. is a local-first, modular AI system that acts as your **digital secon
 | 🧰 Dev Companion         | Assist in coding, debugging, and design planning               |
 | 📊 Metrics Brain (opt.)  | Log your fitness, sleep, glucose, productivity, etc.           |
 | 🗣️ Interaction Layer     | Speak, type, or command—your companion listens, quietly present across your digital landscape. |
+| 🤖 Plugin Chat Core      | Extensible chat system with skill/plugin architecture (LLM, memory search, etc.) |
 | 🌐 Web GUI               | A clean dashboard to interact with everything                  |
 | 🔁 Agent Core            | Background triggers, reminders, weekly reports                 |
 | 🔒 Local-first Privacy   | Full control over what’s stored, sent, or shared. External AI (e.g., OpenRouter API) is opt-in and transparent. |
@@ -41,6 +42,9 @@ M.E.M.I.R. is a local-first, modular AI system that acts as your **digital secon
 - **FastAPI** – High-performance Python backend for APIs, orchestration, and modular services
 - **ChromaDB** – Vector memory search for semantic recall and embeddings
 - **OpenRouter API** – Plug-and-play LLM access (OpenAI, Anthropic, etc.)
+- **Plugin/Skill Chat Core** – Modular, extensible chat engine (skills: LLM, echo, memory search, etc.)
+- **.env Config Support** – Secure, environment-based secrets/configuration
+- **Robust API Tests** – End-to-end tests for memory, chat, and LLM
 - **CLI Frontend** – Command-line interface for power users and automation
 - **Web GUI** (optional) – Modern dashboard for visual management
 - **Voice Interface** (optional) – Speech-to-text (Whisper) and TTS for hands-free operation
@@ -50,6 +54,9 @@ M.E.M.I.R. is a local-first, modular AI system that acts as your **digital secon
 
 ## 🧪 MVP Launch Goals
 
+- [x] Extensible plugin/chat system (skills: LLM, echo, etc.)
+- [x] OpenRouter LLM integration (with .env config)
+- [x] End-to-end tested API (memory, chat, LLM)
 - [ ] Memory: Add, search, and summarize your own notes
 - [ ] Web GUI: Simple input/output and memory browser
 - [ ] Agent system for reminders and smart prompts
