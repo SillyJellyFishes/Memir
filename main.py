@@ -100,7 +100,7 @@ class EchoSkill(Skill):
         return reply, new_history
 
 class LLMSkill(Skill):
-    def __init__(self, model: str = "openai/gpt-3.5-turbo"):
+    def __init__(self, model: str = "openai/gpt-4.1-nano"):
         self.llm = OpenRouterClient()
         self.model = model
 
@@ -109,8 +109,25 @@ class LLMSkill(Skill):
         return not (message.lower().strip().startswith("echo:"))
 
     def handle(self, message: str, history=None) -> Tuple[str, list]:
+        # Fetch latest personality core from ChromaDB
+        system_prompt = None
+        try:
+            results = collection.query(
+                query_texts=["personality core"],
+                n_results=1,
+                where={"type": "personality_core"},
+            )
+            if results["documents"] and results["documents"][0]:
+                # Use the latest personality core document as system prompt
+                system_prompt = results["documents"][0][0].strip()
+        except Exception:
+            pass
+        if not system_prompt:
+            system_prompt = "You are M.E.M.I.R., a wise, friendly, and helpful digital companion inspired by Norse mythology. Respond with encouragement, insight, and a touch of mythic wisdom, but always be practical and supportive."
+
         # Build OpenAI-style message history
         chat_history = []
+        chat_history.append({"role": "system", "content": system_prompt})
         if history:
             for role, content in history:
                 chat_history.append({"role": "user" if role == "user" else "assistant", "content": content})
@@ -122,7 +139,7 @@ class LLMSkill(Skill):
 class ChatbotCore:
     def __init__(self):
         self.skills = []
-        self.register_skill(LLMSkill())  # Register LLM skill first (higher priority)
+        self.register_skill(LLMSkill(model="openai/gpt-4.1-nano"))  # Register LLM skill with modern model
         self.register_skill(EchoSkill())  # Register fallback skill last
 
     def register_skill(self, skill: Skill):
@@ -139,6 +156,7 @@ chatbot_core = ChatbotCore()
 
 class Metadata(BaseModel):
     type: str = Field(..., description="Type of memory, e.g., note, task, character")
+    format: str = Field("markdown", description="Document format: markdown, json, text, etc.")
     title: Optional[str] = None
     created_at: Optional[str] = None
     modified_at: Optional[str] = None

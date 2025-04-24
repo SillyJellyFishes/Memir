@@ -20,7 +20,7 @@ A non-prioritized, comprehensive checklist for building M.E.M.I.R. (Optional ite
 - [ ] Weekly/daily summary generation
 - [x] Set up Python environment (venv, requirements.txt/pyproject.toml) <!-- requirements.txt set up -->
 - [ ] Release versioning and changelog
-- [ ] LLM-powered code assistance (generation, explanation)
+- [x] LLM-powered chat/assistant (OpenRouter API integration, plugin-based, extensible) <!-- LLM chat skill, OpenRouter client, plugin system -->
 - [ ] Define agent/automation schema
 - [x] Unit and integration tests (Pytest) <!-- test_chromadb.py covers endpoint tests -->
 - [x] Write API documentation (OpenAPI/Swagger) <!-- FastAPI auto-generates OpenAPI docs -->
@@ -44,12 +44,12 @@ A non-prioritized, comprehensive checklist for building M.E.M.I.R. (Optional ite
 - [ ] Relationship mapping (entities, events)
 - [x] Scaffold FastAPI project and main app <!-- main.py structure -->
 - [ ] Calendar/event integration (Google, local)
-- [ ] Integrate OpenRouter API for LLM calls (with opt-in controls)
+- [x] Integrate OpenRouter API for LLM calls (with opt-in controls) <!-- .env, OpenRouterClient, LLM skill -->
 - [ ] Create API endpoint for project/task management
 - [x] Create API endpoint for notes/memory storage <!-- /memory/add, /memory/search, /memory/{id} -->
 - [ ] User data export/delete tools
 - [ ] Configure Docker for development and deployment
-- [ ] Context-aware chat and command routing
+- [x] Context-aware chat and command routing <!-- Plugin/skill system, extensible chat API -->
 - [ ] GitHub integration (issues, PRs, code context)
 - [ ] Voice interface (optional, Whisper/TTS) (optional)
 - [ ] Optional cloud deployment (self-hosted) (optional)
@@ -59,6 +59,8 @@ A non-prioritized, comprehensive checklist for building M.E.M.I.R. (Optional ite
 - [ ] Create API endpoint for lore/worldbuilding
 - [ ] Schema for worlds, characters, timelines, etc.
 - [x] Initialize git repository and project structure <!-- assumed initialized -->
-- [x] End-to-end tests for API and frontends <!-- test_chromadb.py -->
+- [x] End-to-end tests for API and frontends <!-- test_chromadb.py covers memory, chat echo, and LLM skills -->
 - [ ] Memory summarization and linking
-
+- [x] Personality core template created and editable (personality_template.md)
+- [x] Personality core stored in ChromaDB and used dynamically by LLM
+- [x] CLI/script for updating personality core from template
