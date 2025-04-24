@@ -44,4 +44,25 @@ assert (
     retrieved["document"] == memory_data["document"]
 ), "Mismatch in retrieved document!"
 
+print("\n[4] Testing chat endpoint (echo fallback)...")
+chat_data = {"message": "echo: Hello, M.E.M.I.R.!"}
+chat_resp = requests.post(f"{BASE_URL}/chat/", json=chat_data)
+assert chat_resp.status_code == 200, f"Chat failed: {chat_resp.text}"
+chat_result = chat_resp.json()
+print("Chat response (echo):", chat_result)
+
+assert chat_result["response"].lower().startswith("echo:"), "Chatbot did not echo as fallback!"
+assert chat_result["history"][-2:] == [["user", "echo: Hello, M.E.M.I.R.!"], ["bot", chat_result["response"]]], "Chat history incorrect for echo!"
+
+print("\n[5] Testing chat endpoint (LLM skill)...")
+llm_data = {"message": "What is the capital of France?"}
+llm_resp = requests.post(f"{BASE_URL}/chat/", json=llm_data)
+assert llm_resp.status_code == 200, f"LLM chat failed: {llm_resp.text}"
+llm_result = llm_resp.json()
+print("Chat response (LLM):", llm_result)
+
+assert not llm_result["response"].lower().startswith("echo:"), "LLM skill did not handle as expected!"
+assert "paris" in llm_result["response"].lower() or "[openrouter error" not in llm_result["response"].lower(), "LLM did not return expected answer or error!"
+assert llm_result["history"][-2:] == [["user", "What is the capital of France?"], ["bot", llm_result["response"]]], "Chat history incorrect for LLM!"
+
 print("\nAll endpoint tests passed!")

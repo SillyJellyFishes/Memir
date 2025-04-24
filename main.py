@@ -68,6 +68,75 @@ embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 
 # Pydantic models
+
+class ChatRequest(BaseModel):
+    message: str
+    history: Optional[list] = None  # For future context handling
+
+class ChatResponse(BaseModel):
+    response: str
+    history: Optional[list] = None
+
+from typing import Callable, Tuple
+
+# Import OpenRouterClient for LLM skill
+from openrouter_client import OpenRouterClient
+
+class Skill:
+    def can_handle(self, message: str, history=None) -> bool:
+        """Return True if this skill should handle the message."""
+        return True  # Default: always handles (for fallback)
+
+    def handle(self, message: str, history=None) -> Tuple[str, list]:
+        """Return (reply, new_history)."""
+        raise NotImplementedError
+
+class EchoSkill(Skill):
+    def can_handle(self, message: str, history=None) -> bool:
+        return True  # Always handles if no other skill claims
+    def handle(self, message: str, history=None) -> Tuple[str, list]:
+        reply = f"Echo: {message}" if message.strip() else "I'm your M.E.M.I.R. assistant! (This is a placeholder response.)"
+        new_history = (history or []) + [("user", message), ("bot", reply)]
+        return reply, new_history
+
+class LLMSkill(Skill):
+    def __init__(self, model: str = "openai/gpt-3.5-turbo"):
+        self.llm = OpenRouterClient()
+        self.model = model
+
+    def can_handle(self, message: str, history=None) -> bool:
+        # Only handle if not explicitly requesting echo
+        return not (message.lower().strip().startswith("echo:"))
+
+    def handle(self, message: str, history=None) -> Tuple[str, list]:
+        # Build OpenAI-style message history
+        chat_history = []
+        if history:
+            for role, content in history:
+                chat_history.append({"role": "user" if role == "user" else "assistant", "content": content})
+        chat_history.append({"role": "user", "content": message})
+        reply = self.llm.chat(chat_history, model=self.model)
+        new_history = (history or []) + [("user", message), ("bot", reply)]
+        return reply, new_history
+
+class ChatbotCore:
+    def __init__(self):
+        self.skills = []
+        self.register_skill(LLMSkill())  # Register LLM skill first (higher priority)
+        self.register_skill(EchoSkill())  # Register fallback skill last
+
+    def register_skill(self, skill: Skill):
+        self.skills.append(skill)
+
+    def chat(self, message: str, history=None) -> (str, list):
+        for skill in self.skills:
+            if skill.can_handle(message, history):
+                return skill.handle(message, history)
+        # Should never reach here if fallback skill is registered
+        return "I don't know how to respond to that.", (history or [])
+
+chatbot_core = ChatbotCore()
+
 class Metadata(BaseModel):
     type: str = Field(..., description="Type of memory, e.g., note, task, character")
     title: Optional[str] = None
@@ -100,6 +169,12 @@ class MemoryItem(BaseModel):
 @app.get("/")
 def read_root():
     return {"message": "Welcome to M.E.M.I.R. API!"}
+
+
+@app.post("/chat/", response_model=ChatResponse)
+def chat_endpoint(req: ChatRequest):
+    reply, new_history = chatbot_core.chat(req.message, req.history)
+    return ChatResponse(response=reply, history=new_history)
 
 
 @app.post("/memory/add", response_model=MemoryItem)
