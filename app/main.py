@@ -9,6 +9,10 @@ app = FastAPI()
 
 llm_client = OpenRouterClient()
 
+@app.get("/")
+def root():
+    return {"status": "Memir backend is live!"}
+
 @app.get("/weather")
 def weather_endpoint(
     city: str = Query("London", description="City name"),
