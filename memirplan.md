@@ -1,4 +1,7 @@
-# 🧠 M.E.M.I.R.
+# M.E.M.I.R. Backend — Project Plan
+
+This project is a modular, local-first AI assistant backend. We are starting fresh, using the OpenAI API, FastAPI for the web framework, and ChromaDB for vector storage.
+
 ### Modular Embedded Memory & Intelligence Relay  
 *A next-gen personal AI assistant inspired by the Norse god of wisdom.*
 

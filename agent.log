@@ -1,0 +1,231 @@
+2025-04-25 11:36:39,678 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:36:39,856 INFO: Use pytorch device_name: cpu
+2025-04-25 11:36:39,856 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:38:17,673 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:38:17,816 INFO: Use pytorch device_name: cpu
+2025-04-25 11:38:17,816 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:39:03,877 INFO: Function call: None(None)
+2025-04-25 11:39:03,877 WARNING: Unknown function: None
+2025-04-25 11:39:04,651 INFO: Function call: None(None)
+2025-04-25 11:39:04,651 WARNING: Unknown function: None
+2025-04-25 11:39:05,799 INFO: Function call: None(None)
+2025-04-25 11:39:05,799 WARNING: Unknown function: None
+2025-04-25 11:39:06,631 INFO: Function call: None(None)
+2025-04-25 11:39:06,631 WARNING: Unknown function: None
+2025-04-25 11:39:08,008 INFO: Function call: None(None)
+2025-04-25 11:39:08,008 WARNING: Unknown function: None
+2025-04-25 11:39:08,682 INFO: Function call: None(None)
+2025-04-25 11:39:08,682 WARNING: Unknown function: None
+2025-04-25 11:39:09,398 INFO: Function call: None(None)
+2025-04-25 11:39:09,398 WARNING: Unknown function: None
+2025-04-25 11:39:10,071 INFO: Function call: None(None)
+2025-04-25 11:39:10,071 WARNING: Unknown function: None
+2025-04-25 11:39:10,876 INFO: Function call: None(None)
+2025-04-25 11:39:10,876 WARNING: Unknown function: None
+2025-04-25 11:41:06,547 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:41:06,705 INFO: Use pytorch device_name: cpu
+2025-04-25 11:41:06,705 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:41:40,875 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:40,928 INFO: Result: Memory saved
+2025-04-25 11:41:41,709 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:41,726 INFO: Result: Memory saved
+2025-04-25 11:41:43,086 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:43,101 INFO: Result: Memory saved
+2025-04-25 11:41:43,886 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:43,900 INFO: Result: Memory saved
+2025-04-25 11:41:44,664 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:44,676 INFO: Result: Memory saved
+2025-04-25 11:41:45,776 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:45,789 INFO: Result: Memory saved
+2025-04-25 11:41:46,537 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:46,551 INFO: Result: Memory saved
+2025-04-25 11:41:47,751 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:47,773 INFO: Result: Memory saved
+2025-04-25 11:41:48,559 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:41:48,584 INFO: Result: Memory saved
+2025-04-25 11:43:18,968 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:43:19,105 INFO: Use pytorch device_name: cpu
+2025-04-25 11:43:19,105 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:43:51,014 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:43:51,049 INFO: Result: Search returned 0 hits
+2025-04-25 11:43:51,959 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:43:51,976 INFO: Result: Search returned 0 hits
+2025-04-25 11:43:52,749 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:43:52,749 WARNING: Aborted: Repeated function call 'search_memory(favorite color)'.
+2025-04-25 11:47:05,297 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:47:05,432 INFO: Use pytorch device_name: cpu
+2025-04-25 11:47:05,432 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:47:11,155 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:47:11,187 INFO: Result: Search returned 0 hits
+2025-04-25 11:47:12,130 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:47:12,130 INFO: Duplicate search_memory query: 'favorite color'
+2025-04-25 11:47:12,144 INFO: Result: Search returned 0 hits
+2025-04-25 11:47:12,946 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:47:12,950 WARNING: Aborted: Repeated function call 'search_memory(favorite color)'.
+2025-04-25 11:47:33,896 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:47:33,908 INFO: Result: Search returned 0 hits
+2025-04-25 11:47:34,830 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:47:34,830 INFO: Duplicate search_memory query: 'favorite color'
+2025-04-25 11:47:34,840 INFO: Result: Search returned 0 hits
+2025-04-25 11:47:35,397 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:47:35,397 WARNING: Aborted: Repeated function call 'search_memory(favorite color)'.
+2025-04-25 11:48:00,723 INFO: Function call: search_memory(color)
+2025-04-25 11:48:00,741 INFO: Result: Search returned 0 hits
+2025-04-25 11:48:01,589 INFO: Function call: search_memory(color)
+2025-04-25 11:48:01,589 INFO: Duplicate search_memory query: 'color'
+2025-04-25 11:48:01,602 INFO: Result: Search returned 0 hits
+2025-04-25 11:48:03,958 INFO: Function call: search_memory(color)
+2025-04-25 11:48:03,958 WARNING: Aborted: Repeated function call 'search_memory(color)'.
+2025-04-25 11:48:19,960 INFO: Function call: search_memory(color" OR "colour)
+2025-04-25 11:48:19,983 INFO: Result: Search returned 0 hits
+2025-04-25 11:48:20,769 INFO: Function call: search_memory(color)
+2025-04-25 11:48:20,784 INFO: Result: Search returned 0 hits
+2025-04-25 11:48:21,528 INFO: Function call: search_memory(color)
+2025-04-25 11:48:21,528 INFO: Duplicate search_memory query: 'color'
+2025-04-25 11:48:21,545 INFO: Result: Search returned 0 hits
+2025-04-25 11:48:22,165 INFO: Function call: search_memory(color)
+2025-04-25 11:48:22,165 WARNING: Aborted: Repeated function call 'search_memory(color)'.
+2025-04-25 11:48:38,999 INFO: Function call: list_memories()
+2025-04-25 11:48:38,999 INFO: Result: Listed 0 memories
+2025-04-25 11:48:39,866 INFO: Function call: list_memories()
+2025-04-25 11:48:39,874 INFO: Result: Listed 0 memories
+2025-04-25 11:48:40,529 INFO: Function call: list_memories()
+2025-04-25 11:48:40,529 WARNING: Aborted: Repeated function call 'list_memories()'.
+2025-04-25 11:49:51,069 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:49:51,103 INFO: Result: Memory saved
+2025-04-25 11:49:51,959 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:49:51,984 INFO: Result: Memory saved
+2025-04-25 11:49:52,667 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:49:52,667 WARNING: Aborted: Repeated function call 'save_memory(The user's favorite color is purple.)'.
+2025-04-25 11:50:04,509 INFO: Function call: list_memories()
+2025-04-25 11:50:04,509 INFO: Result: Listed 2 memories
+2025-04-25 11:50:05,109 INFO: Function call: list_memories()
+2025-04-25 11:50:05,124 INFO: Result: Listed 2 memories
+2025-04-25 11:50:05,970 INFO: Function call: list_memories()
+2025-04-25 11:50:05,970 WARNING: Aborted: Repeated function call 'list_memories()'.
+2025-04-25 11:53:06,563 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:53:06,699 INFO: Use pytorch device_name: cpu
+2025-04-25 11:53:06,699 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:53:20,992 INFO: Function call: list_memories()
+2025-04-25 11:53:21,000 INFO: Result: Listed 0 memories
+2025-04-25 11:55:37,954 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:55:38,097 INFO: Use pytorch device_name: cpu
+2025-04-25 11:55:38,097 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:56:06,119 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:56:06,155 INFO: Result: Search returned 0 hits
+2025-04-25 11:56:16,417 INFO: Function call: list_memories()
+2025-04-25 11:56:16,433 INFO: Result: Listed 0 memories
+2025-04-25 11:57:00,294 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:57:50,742 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 11:57:51,010 INFO: Use pytorch device_name: cpu
+2025-04-25 11:57:51,010 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 11:57:55,127 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:57:55,163 INFO: Result: Search returned 0 hits
+2025-04-25 11:58:15,647 INFO: Function call: save_memory(The user's favorite color is purple.)
+2025-04-25 11:58:15,697 INFO: Result: Memory saved
+2025-04-25 11:58:21,642 INFO: Function call: list_memories()
+2025-04-25 11:58:21,658 INFO: Result: Listed 1 memories
+2025-04-25 11:58:32,555 INFO: Function call: search_memory(favorite color)
+2025-04-25 11:58:32,571 WARNING: Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-04-25 11:58:32,573 INFO: Result: Search returned 1 hits
+2025-04-25 12:00:16,828 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:00:16,946 INFO: Use pytorch device_name: cpu
+2025-04-25 12:00:16,946 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:00:30,995 INFO: Function call: search_memory(favorite color)
+2025-04-25 12:00:31,044 WARNING: Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-04-25 12:00:31,057 INFO: Result: Search returned 1 hits
+2025-04-25 12:02:26,702 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:02:26,826 INFO: Use pytorch device_name: cpu
+2025-04-25 12:02:26,826 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:02:33,658 INFO: Function call: list_memories()
+2025-04-25 12:02:33,674 INFO: Result: Listed 1 memories
+2025-04-25 12:04:52,692 INFO: Function call: search_memory(conversation history)
+2025-04-25 12:04:52,742 WARNING: Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-04-25 12:04:52,743 INFO: Result: Search returned 1 hits
+2025-04-25 12:07:41,022 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:07:41,150 INFO: Use pytorch device_name: cpu
+2025-04-25 12:07:41,150 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:08:30,158 INFO: Function call: search_memory(favorite color)
+2025-04-25 12:08:30,222 WARNING: Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-04-25 12:08:49,197 INFO: Function call: list_memories()
+2025-04-25 12:08:57,200 INFO: Function call: list_memories()
+2025-04-25 12:10:47,959 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:10:48,085 INFO: Use pytorch device_name: cpu
+2025-04-25 12:10:48,085 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:10:52,018 INFO: Function call: list_memories()
+2025-04-25 12:10:58,147 INFO: Function call: search_memory(favorite color)
+2025-04-25 12:10:58,199 WARNING: Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-04-25 12:11:34,996 INFO: Function call: search_memory(favorite color)
+2025-04-25 12:11:35,014 WARNING: Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-04-25 12:16:19,114 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:16:19,242 INFO: Use pytorch device_name: cpu
+2025-04-25 12:16:19,242 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:16:30,815 INFO: Function call: list_memories()
+2025-04-25 12:16:30,830 INFO: DEBUG: list_memories raw: [{'id': 'fdb4c551-69f0-47a1-a534-bcdc86bc683d', 'document': "The user's favorite color is purple.", 'metadata': {'tag': 'chat', 'test': False}}]
+2025-04-25 12:16:49,203 INFO: Function call: search_memory(favorite color)
+2025-04-25 12:16:49,267 WARNING: Number of requested results 5 is greater than number of elements in index 1, updating n_results = 1
+2025-04-25 12:16:49,269 INFO: DEBUG: search_memory('favorite color') raw results: [{'document': "The user's favorite color is purple.", 'metadata': {'tag': 'chat', 'test': False}, 'distance': 0.6504666349498673, 'id': 'fdb4c551-69f0-47a1-a534-bcdc86bc683d'}]
+2025-04-25 12:30:38,269 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:30:38,397 INFO: Use pytorch device_name: cpu
+2025-04-25 12:30:38,397 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:30:47,178 INFO: Function call: get_weather()
+2025-04-25 12:30:47,241 INFO: DEBUG: get_weather('') result: [Weather in London,CA]: mist, 14.53°C (feels like 14.49°C), humidity 94%
+2025-04-25 12:37:42,496 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:37:42,633 INFO: Use pytorch device_name: cpu
+2025-04-25 12:37:42,633 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:38:06,596 INFO: Function call: get_weather()
+2025-04-25 12:38:06,992 INFO: DEBUG: get_weather('') result: Current weather for London, CA:
+- Condition: Mist
+- Temperature: 14.65°C (feels like 14.63°C)
+- Humidity: 94%
+- Wind: 5.14 m/s at 140°
+- Pressure: 1017 hPa
+2025-04-25 12:40:24,208 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:40:24,342 INFO: Use pytorch device_name: cpu
+2025-04-25 12:40:24,342 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:40:30,150 INFO: Function call: get_weather_forecast()
+2025-04-25 12:40:30,247 INFO: DEBUG: get_weather_forecast result: Current: Mist, 14.62°C (feels like 14.59°C), humidity 94%, wind 5.14 m/s at 140°, pressure 1017 hPa.
+Next hour: No precipitation expected.
+Today: Light rain, 13.43–20.76°C, 100% chance of precipitation.
+Tomorrow: Light rain, 3.32–14.64°C, 100% chance of precipitation.
+2025-04-25 12:40:31,442 INFO: Function call: get_weather_forecast()
+2025-04-25 12:40:31,505 INFO: DEBUG: get_weather_forecast result: Current: Mist, 14.62°C (feels like 14.59°C), humidity 94%, wind 5.14 m/s at 140°, pressure 1017 hPa.
+Next hour: No precipitation expected.
+Today: Light rain, 13.43–20.76°C, 100% chance of precipitation.
+Tomorrow: Light rain, 3.32–14.64°C, 100% chance of precipitation.
+2025-04-25 12:40:32,196 INFO: Function call: get_weather_forecast()
+2025-04-25 12:40:32,196 WARNING: Aborted: Repeated function call 'get_weather_forecast()'.
+2025-04-25 12:43:05,251 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:43:05,374 INFO: Use pytorch device_name: cpu
+2025-04-25 12:43:05,374 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:46:44,683 INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-25 12:46:44,803 INFO: Use pytorch device_name: cpu
+2025-04-25 12:46:44,803 INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-25 12:46:48,447 INFO: Function call: get_weather()
+2025-04-25 12:46:48,507 INFO: DEBUG: get_weather('') result: Current weather for London, CA:
+- Condition: Mist
+- Temperature: 14.65°C (feels like 14.63°C)
+- Humidity: 94%
+- Wind: 5.14 m/s at 140°
+- Pressure: 1017 hPa
+2025-04-25 12:46:50,173 INFO: Function call: get_weather()
+2025-04-25 12:46:50,221 INFO: DEBUG: get_weather('') result: Current weather for London, CA:
+- Condition: Mist
+- Temperature: 14.65°C (feels like 14.63°C)
+- Humidity: 94%
+- Wind: 5.14 m/s at 140°
+- Pressure: 1017 hPa
+2025-04-25 12:46:51,200 INFO: Function call: save_memory(Current weather in London, Ontario, Canada: Mist, 14.65°C (feels like 14.63°C), 94% humidity, wind 5.14 m/s at 140°, pressure 1017 hPa.)
+2025-04-25 12:46:51,275 INFO: DEBUG: save_memory called with arg=Current weather in London, Ontario, Canada: Mist, 14.65°C (feels like 14.63°C), 94% humidity, wind 5.14 m/s at 140°, pressure 1017 hPa.
+2025-04-25 12:46:52,270 INFO: Function call: save_memory(Current weather in London, Ontario: Mist, 14.65°C, humidity 94%, wind 5.14 m/s at 140°, pressure 1017 hPa.)
+2025-04-25 12:46:52,288 INFO: DEBUG: save_memory called with arg=Current weather in London, Ontario: Mist, 14.65°C, humidity 94%, wind 5.14 m/s at 140°, pressure 1017 hPa.
+2025-04-25 12:46:53,243 INFO: Function call: save_memory(Current weather in London, Ontario, Canada: Condition is Mist, temperature is 14.65°C, humidity is 94%, wind speed is 5.14 m/s at 140°, and pressure is 1017 hPa.)
+2025-04-25 12:46:53,258 INFO: DEBUG: save_memory called with arg=Current weather in London, Ontario, Canada: Condition is Mist, temperature is 14.65°C, humidity is 94%, wind speed is 5.14 m/s at 140°, and pressure is 1017 hPa.
+2025-04-25 12:46:54,242 INFO: Function call: save_memory(Current weather in London, Ontario, Canada: mist, temperature 14.65°C, humidity 94%, wind 5.14 m/s at 140°, pressure 1017 hPa.)
+2025-04-25 12:46:54,263 INFO: DEBUG: save_memory called with arg=Current weather in London, Ontario, Canada: mist, temperature 14.65°C, humidity 94%, wind 5.14 m/s at 140°, pressure 1017 hPa.
+2025-04-25 12:46:55,357 INFO: Function call: save_memory(Current weather in London, Ontario, Canada: Condition - Mist; Temperature - 14.65°C (feels like 14.63°C); Humidity - 94%; Wind - 5.14 m/s at 140°; Pressure - 1017 hPa.)
+2025-04-25 12:46:55,376 INFO: DEBUG: save_memory called with arg=Current weather in London, Ontario, Canada: Condition - Mist; Temperature - 14.65°C (feels like 14.63°C); Humidity - 94%; Wind - 5.14 m/s at 140°; Pressure - 1017 hPa.
+2025-04-25 12:46:56,550 INFO: Function call: save_memory(Current weather in London, Ontario: Condition is Mist, temperature is 14.65°C, humidity is 94%, wind speed is 5.14 m/s at 140°, and pressure is 1017 hPa.)
+2025-04-25 12:46:56,576 INFO: DEBUG: save_memory called with arg=Current weather in London, Ontario: Condition is Mist, temperature is 14.65°C, humidity is 94%, wind speed is 5.14 m/s at 140°, and pressure is 1017 hPa.
+2025-04-25 12:46:57,696 INFO: Function call: save_memory(Current weather in London, Ontario, Canada: condition is Mist, temperature is 14.65°C, humidity is 94%, wind speed is 5.14 m/s at 140°, and pressure is 1017 hPa.)
+2025-04-25 12:46:57,714 INFO: DEBUG: save_memory called with arg=Current weather in London, Ontario, Canada: condition is Mist, temperature is 14.65°C, humidity is 94%, wind speed is 5.14 m/s at 140°, and pressure is 1017 hPa.
