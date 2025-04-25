@@ -1,25 +1,15 @@
-from sentence_transformers import SentenceTransformer
-from typing import List, Union
-import threading
+import openai
+import os
+from typing import List
 
-class EmbeddingModel:
-    _instance = None
-    _lock = threading.Lock()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-    def __new__(cls, model_name: str = 'all-MiniLM-L6-v2'):
-        if cls._instance is None:
-            with cls._lock:
-                if cls._instance is None:
-                    cls._instance = super().__new__(cls)
-                    cls._instance.model = SentenceTransformer(model_name)
-        return cls._instance
+# Uses OpenAI's embedding API to get a vector for a string
 
-    def embed(self, texts: Union[str, List[str]]):
-        """
-        Compute embeddings for a string or list of strings.
-        Args:
-            texts (str or List[str]): Text or texts to embed.
-        Returns:
-            np.ndarray: Embedding(s) as numpy array.
-        """
-        return self.model.encode(texts)
+def get_openai_embedding(text: str, model: str = "text-embedding-3-small") -> List[float]:
+    openai.api_key = OPENAI_API_KEY
+    response = openai.embeddings.create(
+        input=text,
+        model=model
+    )
+    return response.data[0].embedding

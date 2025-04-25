@@ -1,64 +1,51 @@
-import chromadb
-from chromadb.config import Settings
+import openai
 from typing import List, Dict, Any
-from app.embedding import EmbeddingModel
-import uuid
+import os
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+VECTOR_STORE_NAME = "memir-memories"
 
 class MemoryStore:
-    def __init__(self, persist_directory: str = "./chromadb_data"):
-        self.client = chromadb.PersistentClient(path=persist_directory)
-        self.collection = self.client.get_or_create_collection("memories")
-        self.embedder = EmbeddingModel()
-        self.persist_directory = persist_directory
+    def __init__(self):
+        openai.api_key = OPENAI_API_KEY
+        # Create or retrieve the vector store
+        self.vector_store = openai.VectorStore.create(name=VECTOR_STORE_NAME)
 
     def add_memory(self, text: str, metadata: Dict[str, Any] = None) -> str:
-        memory_id = str(uuid.uuid4())
-        embedding = self.embedder.embed(text)
-        self.collection.add(
-            ids=[memory_id],
-            embeddings=[embedding],
-            documents=[text],
-            metadatas=[metadata or {}]
+        resp = self.vector_store.add_documents(
+            documents=[{"text": text, "metadata": metadata or {}}]
         )
-        return memory_id
+        return resp["ids"][0]
 
     def search_memories(self, query: str, n_results: int = 5) -> List[Dict[str, Any]]:
-        embedding = self.embedder.embed(query)
-        results = self.collection.query(
-            query_embeddings=[embedding],
-            n_results=n_results,
-            include=["documents", "metadatas", "distances"]
+        resp = self.vector_store.query(
+            query=query,
+            top_k=n_results
         )
-        # Format results for easier use
-        hits = []
-        for i, doc in enumerate(results.get("documents", [[]])[0]):
-            hits.append({
-                "document": doc,
-                "metadata": results["metadatas"][0][i],
-                "distance": results["distances"][0][i],
-                "id": results["ids"][0][i]
+        # resp["documents"] is a list of dicts with "text" and "metadata"
+        # resp["ids"] is the list of document IDs
+        results = []
+        for idx, doc in enumerate(resp["documents"]):
+            results.append({
+                "id": resp["ids"][idx],
+                "document": doc["text"],
+                "metadata": doc.get("metadata", {})
             })
-        return hits
+        return results
 
     def list_memories(self) -> List[Dict[str, Any]]:
-        """List all stored memories with their IDs, documents, and metadata."""
-        all_ids = self.collection.get()["ids"]
-        if not all_ids:
-            return []
-        results = self.collection.get(ids=all_ids, include=["documents", "metadatas"])
-        return [
-            {
-                "id": results["ids"][i],
-                "document": results["documents"][i],
-                "metadata": results["metadatas"][i]
-            } for i in range(len(results["ids"]))
-        ]
+        # OpenAI may not support full listing; if not, you may need to track IDs yourself
+        # Here, we assume the API supports listing all documents
+        resp = self.vector_store.list_documents()
+        results = []
+        for doc in resp["documents"]:
+            results.append({
+                "id": doc["id"],
+                "document": doc["text"],
+                "metadata": doc.get("metadata", {})
+            })
+        return results
 
     def remove_memory(self, memory_id: str) -> bool:
-        """Remove a memory by its ID. Returns True if successful, False if not found."""
-        try:
-            self.collection.delete(ids=[memory_id])
-            return True
-        except Exception as e:
-            print(f"Error deleting memory {memory_id}: {e}")
-            return False
+        self.vector_store.delete_documents(ids=[memory_id])
+        return True
