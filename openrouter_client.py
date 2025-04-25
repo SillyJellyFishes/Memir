@@ -1,6 +1,7 @@
 import os
-import requests
 from typing import List, Optional
+
+import requests
 
 class OpenRouterClient:
     """

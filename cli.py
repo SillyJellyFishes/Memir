@@ -1,10 +1,11 @@
-import typer
-from rich.console import Console
-from rich.prompt import Prompt
-from rich.panel import Panel
-import requests
 import os
 import sys
+
+import requests
+import typer
+from rich.console import Console
+from rich.panel import Panel
+from rich.prompt import Prompt
 
 app = typer.Typer(add_completion=False)
 console = Console()

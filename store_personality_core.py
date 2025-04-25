@@ -2,9 +2,10 @@
 Script to store/update the M.E.M.I.R. personality core in ChromaDB via the FastAPI backend.
 Reads the contents of personality_template.md and posts it as a memory item with type="personality_core".
 """
-import requests
 import os
 from datetime import datetime
+
+import requests
 
 API_URL = os.getenv("MEMIR_API_URL", "http://127.0.0.1:8000")
 TEMPLATE_PATH = "personality_template.md"
