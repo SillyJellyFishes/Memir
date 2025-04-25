@@ -44,36 +44,31 @@ def add_message(thread_id: str, content: str = Body(...)):
     msg_id = assistant_api.add_message(thread_id, role="user", content=content)
     return {"message_id": msg_id}
 
+from fastapi import Body
+from app.tool_dispatcher import tool_call_handler
+
+
 @app.post("/thread/{thread_id}/run")
 def run_assistant(thread_id: str, instructions: Optional[str] = Body(None)):
+    # Get or create the Assistant
     assistant_id = assistant_api.get_or_create_assistant()
-    run_id = assistant_api.run_assistant(thread_id, assistant_id, instructions=instructions)
 
-    def tool_call_handler(tool_call):
-        if tool_call.function.name == "get_weather":
-            import json
-            args = json.loads(tool_call.function.arguments)
-            city = args["city"]
-            country_code = args["country_code"]
-            units = args.get("units", "metric")
-            # Use internal function for weather
-            data = get_weather(city=city, country_code=country_code, units=units)
-            return data
-        elif tool_call.function.name == "llm_complete":
-            import json
-            args = json.loads(tool_call.function.arguments)
-            prompt = args["prompt"]
-            model = args.get("model", "openai/gpt-4.1-nano")
-            max_tokens = args.get("max_tokens", 1000)
-            temperature = args.get("temperature", 0.7)
-            response = llm_client.complete(prompt, model=model, max_tokens=max_tokens, temperature=temperature)
-            return response
-        else:
-            return {"error": f"Unknown tool: {tool_call.function.name}"}
+    # Create a new run for the thread
+    run_id = assistant_api.run_assistant(
+        thread_id,
+        assistant_id,
+        instructions=instructions
+    )
 
-    # Handle tool calls and return final run output
-    run_result = assistant_api.handle_tool_calls(thread_id, run_id, tool_call_handler)
+    # Handle tool calls using clean dispatcher
+    run_result = assistant_api.handle_tool_calls(
+        thread_id,
+        run_id,
+        tool_call_handler  # <-- Centralized dispatcher handles everything
+    )
+
     return run_result
+
 
 @app.get("/thread/{thread_id}/run/{run_id}/status")
 def get_run_status(thread_id: str, run_id: str):
